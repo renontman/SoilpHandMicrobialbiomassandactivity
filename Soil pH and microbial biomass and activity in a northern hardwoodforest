@@ -1,0 +1,142 @@
+#Figure 2
+#soil pH over time in reference and calcium-treated watersheds in Oi/Oe; Oa/A; and Min horizon
+#Reference Watershed
+ggplot(BB_new, aes(x=Date, y=pH, color=Treatment)) +
+  ylim(2.5, 6)+
+  geom_point(pch=19, size=1,alpha = 1)+ 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  theme_classic()+ theme(legend.title = element_blank())+
+  theme(legend.position = c(0.9,0.93))+
+  scale_color_manual(labels = c("Reference"),
+                     values = c("coral1"))+
+  facet_wrap(~Hor)  
+  
+  #Calcium-treated watershed 
+  ggplot(BB_new, aes(x=Date, y=pH, color=Treatment)) +
+  ylim(2.5, 6)+
+  geom_point(pch=19, size=1,alpha = 1)+ 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  theme_classic()+ theme(legend.title = element_blank())+
+  theme(legend.position = c(0.9,0.93))+
+  scale_color_manual(labels = c("Reference"),
+                     values = c("coral1"))+
+  facet_wrap(~Hor)  
+
+#Figure 3
+#Microbial Biomass Carbon vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new , aes(x=pH, y=Bioc.divided, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Microbial Biomass Carbon (g C/kg)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 125)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
+
+#Microbial Respiration vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new, aes(x=pH, y=RESPC, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Microbial Respiration (mg/C/kg)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 3000)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
+
+#Figure 4 
+#Microbial Biomass Nitrogen vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new , aes(x=pH, y=BION, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Microbial Biomass Nitrogen (mg/N/kg)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 2250)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
+
+# Potential net N Mineralization vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new , aes(x=pH, y=MIN, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Potential net N Mineralization (mg N/kg/d)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(-15, 80)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
+
+# Potential Net Nitrification vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new , aes(x=pH, y=NIT, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Potential Net Nitrification (mg N/g/H)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 50)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)# Potential net Nitrification vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+
+
+# Denitrification Potential vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new , aes(x=pH, y=DEA, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Denitrification Potential", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 14000)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
+
+
+#Figure 5
+
+# Ammonium vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+ggplot(data_new , aes(x=pH, y=NH4, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Ammonium (mg N/kg)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 400)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
+
+# Nitrate vs. soil pH in soil Horizons (Oi/Oe; Oa/A; and Min)
+#updated Nitrate
+ggplot(data_new , aes(x=pH, y=NO3, color=Treatment)) +
+  geom_point(pch=21, size=0.5,alpha = 1) + 
+  geom_smooth(aes(color=NULL), method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(y= "Nitrate (mg N/kg)", x = "pH") +
+  theme_classic() +scale_y_continuous(
+    expand = c(0, 0),
+    limits = c(0, 140)) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = c(0.9, 0.9)) +
+  scale_color_manual(labels = c("Reference", "Ca-Treated"),
+                     values = c("coral1", "darkturquoise"))+
+  facet_grid(~Hor)
