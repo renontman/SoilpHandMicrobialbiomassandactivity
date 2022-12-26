@@ -1,3 +1,119 @@
+#Linear and Polynomial Regression Models 
+#Model for BION for specific subset Treatment
+BION.W1<- subset(my_data, my_data$Treatment== "W1")
+BION.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+modelBIONBB <- lm( BION.BB$BION ~ BION.BB$pH + I(BION.BB$pH^2)) 
+summary(modelBIONBB)
+modelBIONW1<- lm( BION.W1$BION ~ BION.W1$pH + I(BION.W1$pH^2)) 
+summary(modelBIONW1)
+
+#model for BION for linear specific subset treatment
+modelBIONBBlin <- lm( BION.BB$BION ~ BION.BB$pH)
+modelBIONW1lin<- lm( BION.W1$BION ~ BION.W1$pH)
+summary(modelBIONBBlin)
+summary(modelBIONW1lin)
+
+#Model for BIOC for specific subset Treatment
+BIOC.W1<- subset(my_data, my_data$Treatment== "W1")
+BIOC.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelBIOCBB <- lm( BIOC.BB$BIOC ~ BIOC.BB$pH + I(BIOC.BB$pH^2)) 
+summary(modelBIOCBB)
+modelBIOCW1<- lm( BIOC.W1$BIOC ~ BIOC.W1$pH + I(BIOC.W1$pH^2))
+summary(modelBIOCW1)
+
+#model for BIOC for linear specific subset treatment
+modelBIOCBBlin <- lm( BIOC.BB$BIOC ~ BIOC.BB$pH)
+modelBIOCW1lin<- lm( BIOC.W1$BIOC ~ BIOC.W1$pH)
+summary(modelBIOCBBlin)
+summary(modelBIOCW1lin)
+
+#model for RESPC for specific subset treatment
+RESPC.W1<- subset(my_data, my_data$Treatment== "W1")
+RESPC.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelrespcbb <- lm( RESPC.BB$RESPC ~ RESPC.BB$pH + I(RESPC.BB$pH^2)) 
+summary(modelrespcbb)
+modelrespcw1 <- lm( RESPC.W1$RESPC ~ RESPC.W1$pH + I(RESPC.W1$pH^2)) 
+summary(modelrespcw1)
+
+#model for RESPC for linear specific subset treatment
+modelRESPCBBlin <- lm( RESPC.BB$RESPC ~ RESPC.BB$pH)
+modelRESPCW1lin<- lm( RESPC.W1$RESPC ~ RESPC.W1$pH)
+summary(modelRESPCBBlin)
+summary(modelRESPCW1lin)
+
+##model for NO3 for specific subset treatment
+NO3.W1<- subset(my_data, my_data$Treatment== "W1")
+NO3.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelNO3BB <- lm( NO3.BB$NO3 ~ NO3.BB$pH + I(NO3.BB$pH^2)) 
+modelNO3W1 <- lm( NO3.W1$NO3 ~ NO3.W1$pH + I(NO3.W1$pH^2))
+summary(modelNO3BB)
+summary(modelNO3W1)
+
+#model for NO3 for linear specific subset treatment
+modelNO3BBlin <- lm( NO3.BB$NO3 ~ NO3.BB$pH)
+modelNO3W1lin<- lm( NO3.W1$NO3 ~ NO3.W1$pH)
+summary(modelNO3BBlin)
+summary(modelNO3W1lin)
+
+
+##model for NH4 for specific subset treatment
+NH4.W1<- subset(my_data, my_data$Treatment== "W1")
+NH4.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelNH4BB <- lm( NH4.BB$NH4 ~ NH4.BB$pH + I(NH4.BB$pH^2)) 
+modelNH4W1 <- lm( NH4.W1$NH4 ~ NH4.W1$pH + I(NH4.W1$pH^2))
+summary(modelNH4BB)
+summary(modelNH4W1)
+
+#model for NH4 for linear specific subset treatment
+modelNH4BBlin <- lm( NH4.BB$NH4 ~ NH4.BB$pH)
+modelNH4W1lin<- lm( NH4.W1$NH4 ~ NH4.W1$pH)
+summary(modelNH4BBlin)
+summary(modelNH4W1lin)
+
+##model for NIT for specific subset treatment
+NIT.W1<- subset(my_data, my_data$Treatment== "W1")
+NIT.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelNITBB <- lm( NIT.BB$NIT ~ NIT.BB$pH + I(NIT.BB$pH^2)) 
+modelNITW1 <- lm( NIT.W1$NIT ~ NIT.W1$pH + I(NIT.W1$pH^2))
+summary(modelNITBB)
+summary(modelNITW1)
+
+#model for NIT for linear specific subset treatment
+modelNITBBlin <- lm( NIT.BB$NIT ~ NIT.BB$pH)
+modelNITW1lin<- lm( NIT.W1$NIT ~ NIT.W1$pH)
+summary(modelNITBBlin)
+summary(modelNITW1lin)
+
+##model for MIN for specific subset treatment
+MIN.W1<- subset(my_data, my_data$Treatment== "W1")
+MIN.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelMINBB <- lm( MIN.BB$MIN ~ MIN.BB$pH + I(MIN.BB$pH^2)) 
+modelMINW1 <- lm( MIN.W1$MIN ~ MIN.W1$pH + I(MIN.W1$pH^2))
+summary(modelMINBB)
+summary(modelMINW1)
+
+#model for MIN for linear specific subset treatment
+modelMINBBlin <- lm( MIN.BB$MIN ~ MIN.BB$pH)
+modelMINW1lin<- lm( MIN.W1$MIN ~ MIN.W1$pH)
+summary(modelMINBBlin)
+summary(modelMINW1lin)
+
+##model for DEA for specific subset treatment
+DEA.W1<- subset(my_data, my_data$Treatment== "W1")
+DEA.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+modelDEABB <- lm( DEA.BB$DEA ~ DEA.BB$pH + I(DEA.BB$pH^2)) 
+modelDEAW1 <- lm( DEA.W1$DEA ~ DEA.W1$pH + I(DEA.W1$pH^2))
+summary(modelDEABB)
+summary(modelDEAW1)
+
+#model for DEA for linear specific subset treatment
+modelDEABBlin <- lm( DEA.BB$DEA ~ DEA.BB$pH)
+modelDEAW1lin<- lm( DEA.W1$DEA ~ DEA.W1$pH)
+summary(modelDEABBlin)
+summary(modelDEAW1lin)
+
+
 #Figure 2
 #soil pH over time in reference and calcium-treated watersheds in Oi/Oe; Oa/A; and Min horizon
 #Reference Watershed
