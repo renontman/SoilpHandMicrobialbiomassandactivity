@@ -1,14 +1,14 @@
-#Linear and Polynomial Regression Models 
 #Model for BION for specific subset Treatment
 BION.W1<- subset(my_data, my_data$Treatment== "W1")
 BION.BB<- subset(my_data, my_data$Treatment=="BearBrook")
 
+#BION Polynomial Regresssion Model
 modelBIONBB <- lm( BION.BB$BION ~ BION.BB$pH + I(BION.BB$pH^2)) 
 summary(modelBIONBB)
 modelBIONW1<- lm( BION.W1$BION ~ BION.W1$pH + I(BION.W1$pH^2)) 
 summary(modelBIONW1)
 
-#model for BION for linear specific subset treatment
+#Model for BION for linear specific subset treatment
 modelBIONBBlin <- lm( BION.BB$BION ~ BION.BB$pH)
 modelBIONW1lin<- lm( BION.W1$BION ~ BION.W1$pH)
 summary(modelBIONBBlin)
@@ -17,6 +17,8 @@ summary(modelBIONW1lin)
 #Model for BIOC for specific subset Treatment
 BIOC.W1<- subset(my_data, my_data$Treatment== "W1")
 BIOC.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#BIOC Polynomial Regresssion Model
 modelBIOCBB <- lm( BIOC.BB$BIOC ~ BIOC.BB$pH + I(BIOC.BB$pH^2)) 
 summary(modelBIOCBB)
 modelBIOCW1<- lm( BIOC.W1$BIOC ~ BIOC.W1$pH + I(BIOC.W1$pH^2))
@@ -31,6 +33,8 @@ summary(modelBIOCW1lin)
 #model for RESPC for specific subset treatment
 RESPC.W1<- subset(my_data, my_data$Treatment== "W1")
 RESPC.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#RESPC Polynomial Regresssion Model
 modelrespcbb <- lm( RESPC.BB$RESPC ~ RESPC.BB$pH + I(RESPC.BB$pH^2)) 
 summary(modelrespcbb)
 modelrespcw1 <- lm( RESPC.W1$RESPC ~ RESPC.W1$pH + I(RESPC.W1$pH^2)) 
@@ -45,6 +49,8 @@ summary(modelRESPCW1lin)
 ##model for NO3 for specific subset treatment
 NO3.W1<- subset(my_data, my_data$Treatment== "W1")
 NO3.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#NO3 Polynomial Regresssion Model
 modelNO3BB <- lm( NO3.BB$NO3 ~ NO3.BB$pH + I(NO3.BB$pH^2)) 
 modelNO3W1 <- lm( NO3.W1$NO3 ~ NO3.W1$pH + I(NO3.W1$pH^2))
 summary(modelNO3BB)
@@ -56,10 +62,11 @@ modelNO3W1lin<- lm( NO3.W1$NO3 ~ NO3.W1$pH)
 summary(modelNO3BBlin)
 summary(modelNO3W1lin)
 
-
 ##model for NH4 for specific subset treatment
 NH4.W1<- subset(my_data, my_data$Treatment== "W1")
 NH4.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#NH4 Polynomial Regresssion Model
 modelNH4BB <- lm( NH4.BB$NH4 ~ NH4.BB$pH + I(NH4.BB$pH^2)) 
 modelNH4W1 <- lm( NH4.W1$NH4 ~ NH4.W1$pH + I(NH4.W1$pH^2))
 summary(modelNH4BB)
@@ -74,6 +81,8 @@ summary(modelNH4W1lin)
 ##model for NIT for specific subset treatment
 NIT.W1<- subset(my_data, my_data$Treatment== "W1")
 NIT.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#NIT Polynomial Regresssion Model
 modelNITBB <- lm( NIT.BB$NIT ~ NIT.BB$pH + I(NIT.BB$pH^2)) 
 modelNITW1 <- lm( NIT.W1$NIT ~ NIT.W1$pH + I(NIT.W1$pH^2))
 summary(modelNITBB)
@@ -88,6 +97,8 @@ summary(modelNITW1lin)
 ##model for MIN for specific subset treatment
 MIN.W1<- subset(my_data, my_data$Treatment== "W1")
 MIN.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#MIN Polynomial Regresssion Model
 modelMINBB <- lm( MIN.BB$MIN ~ MIN.BB$pH + I(MIN.BB$pH^2)) 
 modelMINW1 <- lm( MIN.W1$MIN ~ MIN.W1$pH + I(MIN.W1$pH^2))
 summary(modelMINBB)
@@ -102,6 +113,8 @@ summary(modelMINW1lin)
 ##model for DEA for specific subset treatment
 DEA.W1<- subset(my_data, my_data$Treatment== "W1")
 DEA.BB<- subset(my_data, my_data$Treatment=="BearBrook")
+
+#DEA Polynomial Regresssion Model
 modelDEABB <- lm( DEA.BB$DEA ~ DEA.BB$pH + I(DEA.BB$pH^2)) 
 modelDEAW1 <- lm( DEA.W1$DEA ~ DEA.W1$pH + I(DEA.W1$pH^2))
 summary(modelDEABB)
@@ -112,7 +125,6 @@ modelDEABBlin <- lm( DEA.BB$DEA ~ DEA.BB$pH)
 modelDEAW1lin<- lm( DEA.W1$DEA ~ DEA.W1$pH)
 summary(modelDEABBlin)
 summary(modelDEAW1lin)
-
 
 #Figure 2
 #soil pH over time in reference and calcium-treated watersheds in Oi/Oe; Oa/A; and Min horizon
