@@ -126,6 +126,593 @@ modelDEAW1lin<- lm( DEA.W1$DEA ~ DEA.W1$pH)
 summary(modelDEABBlin)
 summary(modelDEAW1lin)
 
+#Subset Horizons (Oi/Oe) 
+#BIOC for linear 
+Horizonoie<- subset(my_data, my_data$Hor=="Oi/Oe")
+Horizonoie.bb<- subset(Horizonoie, Horizonoie$Treatment=="BearBrook")
+Horizonoie.w1<- subset(Horizonoie, Horizonoie$Treatment=="W1")
+
+modelHorizonOielin<- lm(data = Horizonoie,
+                             BIOC ~ pH)
+summary(modelHorizonOielin)
+
+modelHorizonOiebblin<- lm(data = Horizonoie.bb,
+                        BIOC ~ pH)
+summary(modelHorizonOiebblin)
+modelHorizonOiew1lin<- lm(data = Horizonoie.w1,
+                        BIOC ~ pH)
+summary(modelHorizonOiew1lin)
+
+#Polynomial Regression
+ModOiOe<- (lm(data = Horizonoie,
+              BIOC ~ pH + pH2))
+summary(ModOiOe)
+ModOiOe.bb<- (lm(data = Horizonoie.bb,
+              BIOC ~ pH + pH2))
+summary(ModOiOe.bb)
+ModOiOe.w1<- (lm(data = Horizonoie.w1,
+                 BIOC ~ pH + pH2))
+summary(ModOiOe.w1)
+
+#BION for linear
+modelHorizonOiebionlin<- lm(data = Horizonoie,
+                        BION ~ pH)
+summary(modelHorizonOiebionlin)
+modelHorizonOiebbbionlin<- lm(data = Horizonoie.bb,
+                          BION ~ pH)
+summary(modelHorizonOiebbbionlin)
+modelHorizonOiebionw1lin<- lm(data = Horizonoie.w1,
+                          BION ~ pH)
+summary(modelHorizonOiebionw1lin)
+
+#Polynomial Regression
+ModOiOebion<- (lm(data = Horizonoie,
+              BION ~ pH + pH2))
+summary(ModOiOebion)
+ModOiOebion.bb<- (lm(data = Horizonoie.bb,
+                 BION ~ pH + pH2))
+summary(ModOiOebion.bb)
+ModOiOebion.w1<- (lm(data = Horizonoie.w1,
+                 BION ~ pH + pH2))
+summary(ModOiOebion.w1)
+
+#Respc for linear 
+modelHorizonOierespclin<- lm(data = Horizonoie,
+                            RESPC ~ pH)
+summary(modelHorizonOierespclin)
+
+modelHorizonOiebbRESPClin<- lm(data = Horizonoie.bb,
+                               RESPC ~ pH)
+summary(modelHorizonOiebbRESPClin)
+modelHorizonOieRESPCw1lin<- lm(data = Horizonoie.w1,
+                               RESPC ~ pH)
+summary(modelHorizonOieRESPCw1lin)
+
+#Polynomial Regression
+ModOiOerespc<- (lm(data = Horizonoie,
+                  RESPC ~ pH + pH2))
+summary(ModOiOerespc)
+ModOiOeRESPC.bb<- (lm(data = Horizonoie.bb,
+                      RESPC ~ pH + pH2))
+summary(ModOiOeRESPC.bb)
+ModOiOeRESPC.w1<- (lm(data = Horizonoie.w1,
+                      RESPC ~ pH + pH2))
+summary(ModOiOeRESPC.w1)
+
+#NO3 for linear
+modelHorizonOieNO3lin<- lm(data = Horizonoie,
+                           NO3 ~ pH)
+summary(modelHorizonOieNO3lin)
+
+modelHorizonOiebbNO3lin<- lm(data = Horizonoie.bb,
+                             NO3 ~ pH)
+summary(modelHorizonOiebbNO3lin)
+modelHorizonOieNO3w1lin<- lm(data = Horizonoie.w1,
+                               NO3 ~ pH)
+summary(modelHorizonOieNO3w1lin)
+
+#Polynomial Regression 
+ModOiOeNO3<- (lm(data = Horizonoie,
+                 NO3 ~ pH + pH2))
+summary(ModOiOeNO3)
+ModOiOeNO3.bb<- (lm(data = Horizonoie.bb,
+                    NO3 ~ pH + pH2))
+summary(ModOiOeNO3.bb)
+ModOiOeNO3.w1<- (lm(data = Horizonoie.w1,
+                    NO3 ~ pH + pH2))
+summary(ModOiOeNO3.w1)
+
+#NH4 for linear 
+modelHorizonOieNH4lin<- lm(data = Horizonoie,
+                            NH4 ~ pH)
+summary(modelHorizonOieNH4lin)
+
+modelHorizonOiebbNH4lin<- lm(data = Horizonoie.bb,
+                             NH4 ~ pH)
+summary(modelHorizonOiebbNH4lin)
+modelHorizonOieNH4w1lin<- lm(data = Horizonoie.w1,
+                             NH4 ~ pH)
+summary(modelHorizonOieNH4w1lin)
+
+#Polynomial Regression
+ModOiOeNH4<- (lm(data = Horizonoie,
+                 NH4 ~ pH + pH2))
+summary(ModOiOeNH4)
+ModOiOeNH4.bb<- (lm(data = Horizonoie.bb,
+                    NH4 ~ pH + pH2))
+summary(ModOiOeNH4.bb)
+ModOiOeNH4.w1<- (lm(data = Horizonoie.w1,
+                    NH4 ~ pH + pH2))
+summary(ModOiOeNH4.w1)
+
+#NIT for linear
+modelHorizonOieNITlin<- lm(data = Horizonoie,
+                           NIT ~ pH)
+summary(modelHorizonOieNITlin)
+
+modelHorizonOiebbNITlin<- lm(data = Horizonoie.bb,
+                             NIT ~ pH)
+summary(modelHorizonOiebbNITlin)
+modelHorizonOieNITw1lin<- lm(data = Horizonoie.w1,
+                             NIT ~ pH)
+summary(modelHorizonOieNITw1lin)
+
+#Polynomial Regression
+ModOiOeNIT<- (lm(data = Horizonoie,
+                 NIT ~ pH + pH2))
+summary(ModOiOeNIT)
+ModOiOeNIT.bb<- (lm(data = Horizonoie.bb,
+                    NIT ~ pH + pH2))
+summary(ModOiOeNIT.bb)
+ModOiOeNIT.w1<- (lm(data = Horizonoie.w1,
+                    NIT ~ pH + pH2))
+summary(ModOiOeNIT.w1)
+
+#min for linear
+modelHorizonOieMINlin<- lm(data = Horizonoie,
+                           MIN ~ pH)
+summary(modelHorizonOieMINlin)
+
+modelHorizonOiebbMINlin<- lm(data = Horizonoie.bb,
+                             MIN ~ pH)
+summary(modelHorizonOiebbMINlin)
+modelHorizonOieMINw1lin<- lm(data = Horizonoie.w1,
+                             MIN ~ pH)
+summary(modelHorizonOieMINw1lin)
+
+#polynomial regression
+ModOiOeMIN<- (lm(data = Horizonoie,
+                 MIN ~ pH + pH2))
+summary(ModOiOeMIN)
+ModOiOeMIN.bb<- (lm(data = Horizonoie.bb,
+                    MIN ~ pH + pH2))
+summary(ModOiOeMIN.bb)
+ModOiOeMIN.w1<- (lm(data = Horizonoie.w1,
+                    MIN ~ pH + pH2))
+summary(ModOiOeMIN.w1)
+
+#DEA for linear
+modelHorizonOieDEAlin<- lm(data = Horizonoie,
+                           DEA ~ pH)
+summary(modelHorizonOieDEAlin)
+
+modelHorizonOiebbDEAlin<- lm(data = Horizonoie.bb,
+                             DEA ~ pH)
+summary(modelHorizonOiebbDEAlin)
+modelHorizonOieDEAw1lin<- lm(data = Horizonoie.w1,
+                             DEA ~ pH)
+summary(modelHorizonOieDEAw1lin)
+
+#Polynomial Regression
+ModOiOeDEA<- (lm(data = Horizonoie,
+                 DEA ~ pH + pH2))
+summary(ModOiOeDEA)
+ModOiOeDEA.bb<- (lm(data = Horizonoie.bb,
+                    DEA ~ pH + pH2))
+summary(ModOiOeDEA.bb)
+ModOiOeDEA.w1<- (lm(data = Horizonoie.w1,
+                    DEA ~ pH + pH2))
+summary(ModOiOeDEA.w1)
+
+#Subset Horizons (Oa/A)
+
+HorizonOaA<- subset(my_data, my_data$Hor=="Oa/A")
+HorizonOaA.bb<- subset(HorizonOaA, HorizonOaA$Treatment=="BearBrook")
+HorizonOaA.w1<- subset(HorizonOaA, HorizonOaA$Treatment=="W1")
+
+ModOaA<- (lm(data = HorizonOaA,
+              BIOC ~ pH + pH2))
+ModOaA.bb<- (lm(data = HorizonOaA.bb,
+                 BIOC ~ pH + pH2))
+ModOaA.w1<- (lm(data = HorizonOaA.w1,
+                 BIOC ~ pH + pH2))
+modelHorizonOaABIOClin<- lm(data = HorizonOaA,
+                           BIOC ~ pH)
+summary(modelHorizonOaABIOClin)
+
+modelHorizonOaABIOCbblin<- lm(data = HorizonOaA.bb,
+                             BIOC ~ pH)
+summary(modelHorizonOaABIOCbblin)
+modelHorizonOaABIOCw1lin<- lm(data = HorizonOaA.w1,
+                             BIOC ~ pH)
+summary(modelHorizonOaABIOCw1lin)
+
+summary(ModOaA)
+summary(ModOaA.bb)
+summary(ModOaA.w1)
+
+#BION regression 
+ModOaAbion<- (lm(data = HorizonOaA,
+             BION ~ pH + pH2))
+ModOaA.bbbion<- (lm(data = HorizonOaA.bb,
+                BION ~ pH + pH2))
+ModOaA.w1bion<- (lm(data = HorizonOaA.w1,
+                BION ~ pH + pH2))
+#Linear
+modelHorizonOaABIONlin<- lm(data = HorizonOaA,
+                            BION ~ pH)
+summary(modelHorizonOaABIONlin)
+
+modelHorizonOaABIONbblin<- lm(data = HorizonOaA.bb,
+                              BION ~ pH)
+summary(modelHorizonOaABIONbblin)
+modelHorizonOaABIONw1lin<- lm(data = HorizonOaA.w1,
+                              BION ~ pH)
+summary(modelHorizonOaABIONw1lin)
+
+summary(ModOaAbion)
+summary(ModOaA.bbbion)
+summary(ModOaA.w1bion)
+
+#respc polynomial regression 
+ModOaArespc<- (lm(data = HorizonOaA,
+                 RESPC ~ pH + pH2))
+ModOaA.bbrespc<- (lm(data = HorizonOaA.bb,
+                    RESPC ~ pH + pH2))
+ModOaA.w1respc<- (lm(data = HorizonOaA.w1,
+                    RESPC ~ pH + pH2))
+                    
+#Linear                     
+modelHorizonOaARESPClin<- lm(data = HorizonOaA,
+                             RESPC ~ pH)
+
+modelHorizonOaARESPCbblin<- lm(data = HorizonOaA.bb,
+                               RESPC ~ pH)
+
+modelHorizonOaARESPCw1lin<- lm(data = HorizonOaA.w1,
+                               RESPC ~ pH)
+summary(modelHorizonOaARESPClin)
+summary(modelHorizonOaARESPCbblin)
+summary(modelHorizonOaARESPCw1lin)
+
+summary(ModOaArespc)
+summary(ModOaA.bbrespc)
+summary(ModOaA.w1respc)
+
+#NO3 polynomial regression 
+ModOaAno3<- (lm(data = HorizonOaA,
+                  NO3 ~ pH + pH2))
+ModOaA.bbno3<- (lm(data = HorizonOaA.bb,
+                     NO3 ~ pH + pH2))
+ModOaA.w1no3<- (lm(data = HorizonOaA.w1,
+                     NO3 ~ pH + pH2))
+                     
+#Linear                     
+modelHorizonOaANO3lin<- lm(data = HorizonOaA,
+                           NO3 ~ pH)
+
+modelHorizonOaANO3bblin<- lm(data = HorizonOaA.bb,
+                               NO3 ~ pH)
+
+modelHorizonOaANO3w1lin<- lm(data = HorizonOaA.w1,
+                               NO3 ~ pH)
+summary(modelHorizonOaANO3lin)
+summary(modelHorizonOaANO3bblin)
+summary(modelHorizonOaANO3w1lin)
+
+summary(ModOaAno3)
+summary(ModOaA.bbno3)
+summary(ModOaA.w1no3)
+
+#NH4 polynomial regression 
+ModOaAnh4<- (lm(data = HorizonOaA,
+                  NH4 ~ pH + pH2))
+ModOaA.bbnh4<- (lm(data = HorizonOaA.bb,
+                     NH4 ~ pH + pH2))
+ModOaA.w1nh4<- (lm(data = HorizonOaA.w1,
+                     NH4 ~ pH + pH2))
+summary(ModOaAnh4)
+summary(ModOaA.bbnh4)
+summary(ModOaA.w1nh4)
+
+#Linear
+modelHorizonOaANH4lin<- lm(data = HorizonOaA,
+                           NH4 ~ pH)
+
+modelHorizonOaANH4bblin<- lm(data = HorizonOaA.bb,
+                             NH4 ~ pH)
+
+modelHorizonOaANH4w1lin<- lm(data = HorizonOaA.w1,
+                             NH4 ~ pH)
+summary(modelHorizonOaANH4lin)
+summary(modelHorizonOaANH4bblin)
+summary(modelHorizonOaANH4w1lin)
+
+#NIT Polynomial Regression
+ModOaAnit<- (lm(data = HorizonOaA,
+                NIT ~ pH + pH2))
+ModOaA.bbnit<- (lm(data = HorizonOaA.bb,
+                   NIT ~ pH + pH2))
+ModOaA.w1nit<- (lm(data = HorizonOaA.w1,
+                   NIT ~ pH + pH2))
+summary(ModOaAnit)
+summary(ModOaA.bbnit)
+summary(ModOaA.w1nit)
+
+#Linear 
+modelHorizonOaANITlin<- lm(data = HorizonOaA,
+                           NIT ~ pH)
+
+modelHorizonOaANITbblin<- lm(data = HorizonOaA.bb,
+                             NIT ~ pH)
+
+modelHorizonOaANITw1lin<- lm(data = HorizonOaA.w1,
+                             NIT ~ pH)
+summary(modelHorizonOaANITlin)
+summary(modelHorizonOaANITbblin)
+summary(modelHorizonOaANITw1lin)
+
+#MIN polynomial regression
+ModOaAmin<- (lm(data = HorizonOaA,
+                MIN ~ pH + pH2))
+ModOaA.bbmin<- (lm(data = HorizonOaA.bb,
+                   MIN ~ pH + pH2))
+ModOaA.w1min<- (lm(data = HorizonOaA.w1,
+                   MIN ~ pH + pH2))
+summary(ModOaAmin)
+summary(ModOaA.bbmin)
+summary(ModOaA.w1min)
+
+#Linear 
+modelHorizonOaAMINlin<- lm(data = HorizonOaA,
+                           MIN ~ pH)
+
+modelHorizonOaAMINbblin<- lm(data = HorizonOaA.bb,
+                             MIN ~ pH)
+
+modelHorizonOaAMINw1lin<- lm(data = HorizonOaA.w1,
+                             MIN ~ pH)
+summary(modelHorizonOaAMINlin)
+summary(modelHorizonOaAMINbblin)
+summary(modelHorizonOaAMINw1lin)
+
+#DEA polynomial regression
+ModOaAdea<- (lm(data = HorizonOaA,
+                DEA ~ pH + pH2))
+ModOaA.bbdea<- (lm(data = HorizonOaA.bb,
+                   DEA ~ pH + pH2))
+ModOaA.w1dea<- (lm(data = HorizonOaA.w1,
+                   DEA ~ pH + pH2))
+summary(ModOaAdea)
+summary(ModOaA.w1dea)
+summary(ModOaA.bbdea)
+
+#Linear 
+modelHorizonOaADEAlin<- lm(data = HorizonOaA,
+                           DEA ~ pH)
+
+modelHorizonOaADEAbblin<- lm(data = HorizonOaA.bb,
+                             DEA ~ pH)
+
+modelHorizonOaADEAw1lin<- lm(data = HorizonOaA.w1,
+                             DEA ~ pH)
+summary(modelHorizonOaADEAlin)
+summary(modelHorizonOaADEAbblin)
+summary(modelHorizonOaADEAw1lin)
+
+
+#Subset Horizons (Min)
+HorizonMIN<- subset(my_data, my_data$Hor=="Min")
+HorizonMIN.bb<- subset(HorizonMin, HorizonMin$Treatment=="BearBrook")
+HorizonMIN.w1<- subset(HorizonMin, HorizonMin$Treatment=="W1")
+
+#BIOC polynomial regression
+ModMin<- (lm(data = HorizonMin,
+             BIOC ~ pH + pH2))
+ModMin.bb<- (lm(data = HorizonMin.bb,
+                BIOC ~ pH + pH2))
+ModMin.w1<- (lm(data = HorizonMin.w1,
+                BIOC ~ pH + pH2))
+                
+#BIOC linear               
+modelHorizonMinBIOClin<- lm(data = HorizonMin,
+                            BIOC ~ pH)
+summary(modelHorizonMinBIOClin)
+
+modelHorizonMinBIOCbblin<- lm(data = HorizonMin.bb,
+                              BIOC ~ pH)
+summary(modelHorizonMinBIOCbblin)
+modelHorizonMinBIOCw1lin<- lm(data = HorizonMin.w1,
+                              BIOC ~ pH)
+summary(modelHorizonMinBIOCw1lin)
+
+summary(ModMin)
+summary(ModMin.bb)
+summary(ModMin.w1)
+
+#BION polynomial regression
+ModMINbion<- (lm(data = HorizonMIN,
+                 BION ~ pH + pH2))
+ModMIN.bbbion<- (lm(data = HorizonMIN.bb,
+                    BION ~ pH + pH2))
+ModMIN.w1bion<- (lm(data = HorizonMIN.w1,
+                    BION ~ pH + pH2))
+
+#Linear
+modelHorizonMINBIONlin<- lm(data = HorizonMIN,
+                            BION ~ pH)
+summary(modelHorizonMINBIONlin)
+
+modelHorizonMINBIONbblin<- lm(data = HorizonMIN.bb,
+                              BION ~ pH)
+summary(modelHorizonMINBIONbblin)
+modelHorizonMINBIONw1lin<- lm(data = HorizonMIN.w1,
+                              BION ~ pH)
+summary(modelHorizonMINBIONw1lin)
+
+summary(ModMINbion)
+summary(ModMIN.bbbion)
+summary(ModMIN.w1bion)
+
+#RESPC Polynomial Regression
+ModMINrespc<- (lm(data = HorizonMIN,
+                  RESPC ~ pH + pH2))
+ModMIN.bbrespc<- (lm(data = HorizonMIN.bb,
+                     RESPC ~ pH + pH2))
+ModMIN.w1respc<- (lm(data = HorizonMIN.w1,
+                     RESPC ~ pH + pH2))
+                     
+#Linear                     
+modelHorizonMINRESPClin<- lm(data = HorizonMIN,
+                             RESPC ~ pH)
+
+modelHorizonMINRESPCbblin<- lm(data = HorizonMIN.bb,
+                               RESPC ~ pH)
+
+modelHorizonMINRESPCw1lin<- lm(data = HorizonMIN.w1,
+                               RESPC ~ pH)
+summary(modelHorizonMINRESPClin)
+summary(modelHorizonMINRESPCbblin)
+summary(modelHorizonMINRESPCw1lin)
+
+summary(ModMINrespc)
+summary(ModMIN.bbrespc)
+summary(ModMIN.w1respc)
+
+#NO3 Polynomial Regression
+ModMINno3<- (lm(data = HorizonMIN,
+                NO3 ~ pH + pH2))
+ModMIN.bbno3<- (lm(data = HorizonMIN.bb,
+                   NO3 ~ pH + pH2))
+ModMIN.w1no3<- (lm(data = HorizonMIN.w1,
+                   NO3 ~ pH + pH2))
+                   
+#Linear 
+modelHorizonMINNO3lin<- lm(data = HorizonMIN,
+                           NO3 ~ pH)
+
+modelHorizonMINNO3bblin<- lm(data = HorizonMIN.bb,
+                             NO3 ~ pH)
+
+modelHorizonMINNO3w1lin<- lm(data = HorizonMIN.w1,
+                             NO3 ~ pH)
+summary(modelHorizonMINNO3lin)
+summary(modelHorizonMINNO3bblin)
+summary(modelHorizonMINNO3w1lin)
+
+summary(ModMINno3)
+summary(ModMIN.bbno3)
+summary(ModMIN.w1no3)
+
+#NH4 Polynomial Regression
+ModMINnh4<- (lm(data = HorizonMIN,
+                NH4 ~ pH + pH2))
+ModMIN.bbnh4<- (lm(data = HorizonMIN.bb,
+                   NH4 ~ pH + pH2))
+ModMIN.w1nh4<- (lm(data = HorizonMIN.w1,
+                   NH4 ~ pH + pH2))
+summary(ModMINnh4)
+summary(ModMIN.bbnh4)
+summary(ModMIN.w1nh4)
+
+#Linear
+modelHorizonMINNH4lin<- lm(data = HorizonMIN,
+                           NH4 ~ pH)
+
+modelHorizonMINNH4bblin<- lm(data = HorizonMIN.bb,
+                             NH4 ~ pH)
+
+modelHorizonMINNH4w1lin<- lm(data = HorizonMIN.w1,
+                             NH4 ~ pH)
+summary(modelHorizonMINNH4lin)
+summary(modelHorizonMINNH4bblin)
+summary(modelHorizonMINNH4w1lin)
+
+
+#MIN Polynomial Regression 
+ModMin<- (lm(data = HorizonMin,
+             MIN ~ pH + pH2))
+ModMin.bb<- (lm(data = HorizonMin.bb,
+                MIN ~ pH + pH2))
+ModMin.w1<- (lm(data = HorizonMin.w1,
+                MIN ~ pH + pH2))
+
+#Linear
+modelHorizonMINMINlin<- lm(data = HorizonMIN,
+                           MIN ~ pH)
+
+modelHorizonMINMINbblin<- lm(data = HorizonMIN.bb,
+                             MIN ~ pH)
+
+modelHorizonMINMINw1lin<- lm(data = HorizonMIN.w1,
+                             MIN ~ pH)
+summary(modelHorizonMINMINlin)
+summary(modelHorizonMINMINbblin)
+summary(modelHorizonMINMINw1lin)
+
+summary(ModMin)
+summary(ModMin.bb)
+summary(ModMin.w1)
+
+#DEA Polynomial Regression
+ModMindea<- (lm(data = HorizonMin,
+             DEA ~ pH + pH2))
+ModMin.bbdea<- (lm(data = HorizonMin.bb,
+                DEA ~ pH + pH2))
+ModMin.w1dea<- (lm(data = HorizonMin.w1,
+                DEA ~ pH + pH2))
+summary(ModMindea)
+summary(ModMin.bbdea)
+summary(ModMin.w1dea)
+
+#Linear
+modelHorizonMINDEAlin<- lm(data = HorizonMIN,
+                           DEA ~ pH)
+
+modelHorizonMINDEAbblin<- lm(data = HorizonMIN.bb,
+                             DEA ~ pH)
+
+modelHorizonMINDEAw1lin<- lm(data = HorizonMIN.w1,
+                             DEA ~ pH)
+summary(modelHorizonMINDEAlin)
+summary(modelHorizonMINDEAbblin)
+summary(modelHorizonMINDEAw1lin)
+
+#NIT Polynomial Regression
+ModMinnit<- (lm(data = HorizonMin,
+                NIT ~ pH + pH2))
+ModMin.bbnit<- (lm(data = HorizonMin.bb,
+                   NIT ~ pH + pH2))
+ModMin.w1nit<- (lm(data = HorizonMin.w1,
+                   NIT ~ pH + pH2))
+summary(ModMinnit)
+summary(ModMin.bbnit)
+summary(ModMin.w1nit)
+
+#Linear 
+modelHorizonMINNITlin<- lm(data = HorizonMIN,
+                           NIT ~ pH)
+
+modelHorizonMINNITbblin<- lm(data = HorizonMIN.bb,
+                             NIT ~ pH)
+
+modelHorizonMINNITw1lin<- lm(data = HorizonMIN.w1,
+                             NIT ~ pH)
+summary(modelHorizonMINNITlin)
+summary(modelHorizonMINNITbblin)
+summary(modelHorizonMINNITw1lin)
+
+
 #Figure 2
 #soil pH over time in reference and calcium-treated watersheds in Oi/Oe; Oa/A; and Min horizon
 #Reference Watershed
