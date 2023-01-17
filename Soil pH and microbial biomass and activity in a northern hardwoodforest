@@ -1,20 +1,20 @@
-#Model for BION for specific subset Treatment
+#Model for Microbial Biomass Nitrogen for specific subset Treatment
 BION.W1<- subset(my_data, my_data$Treatment== "W1")
 BION.BB<- subset(my_data, my_data$Treatment=="BearBrook")
 
-#BION Polynomial Regresssion Model
+#Polynomial Regresssion Models for Microbial Biomass Nitrogen by watershed, over all soil horizons
 modelBIONBB <- lm( BION.BB$BION ~ BION.BB$pH + I(BION.BB$pH^2)) 
 summary(modelBIONBB)
 modelBIONW1<- lm( BION.W1$BION ~ BION.W1$pH + I(BION.W1$pH^2)) 
 summary(modelBIONW1)
 
-#Model for BION for linear specific subset treatment
+#Linear Regresssion Models for Microbial Biomass Nitrogen by watershed, over all soil horizons
 modelBIONBBlin <- lm( BION.BB$BION ~ BION.BB$pH)
 modelBIONW1lin<- lm( BION.W1$BION ~ BION.W1$pH)
 summary(modelBIONBBlin)
 summary(modelBIONW1lin)
 
-#Model for BIOC for specific subset Treatment
+#Model for Microbial Biomass Carbon by watershed, over all soil horizons
 BIOC.W1<- subset(my_data, my_data$Treatment== "W1")
 BIOC.BB<- subset(my_data, my_data$Treatment=="BearBrook")
 
